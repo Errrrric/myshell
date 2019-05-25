@@ -9,9 +9,7 @@
 
 
 #define MAX_LEN_LINE    10
-#define LEN_HOSTNAME	30      //shell prompt. username과 hostname를 위한 배
-
-열
+#define LEN_HOSTNAME	30      //shell prompt. username과 hostname를 위한 배열
 
 int main(void)
 {
@@ -35,7 +33,8 @@ int main(void)
        memset(hostname, 0x00, sizeof(hostname));
 
        gethostname(hostname, LEN_HOSTNAME);
-       printf("%s@%s $",getpwuid(getuid())->pw_name,hostname);   //printf("hostname: %s\n", hostname);  ,printf("username: %s\n", getpwuid(getuid())->pw_name); 합침
+       printf("%s@%s $",getpwuid(getuid())->pw_name,hostname);
+       //printf("hostname: %s\n", hostname);  ,printf("username: %s\n", getpwuid(getuid())->pw_name); 합침
 
 
        printf("MyShell $ ");
@@ -56,7 +55,6 @@ int main(void)
             }
 
 
-//
 
        
        ptr = strtok(s,";");
